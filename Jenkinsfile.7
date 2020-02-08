@@ -16,6 +16,17 @@ pipeline {
                 echo 'Deploying'
             }
         }
+        stage('Deploy - Staging') {
+            steps {
+                echo 'deploy staging'
+            }
+        }
+        stage('Deploy - Production') {
+            steps {
+                echo 'deploy production'
+            }
+        }
+
     }
     post {
         always {
