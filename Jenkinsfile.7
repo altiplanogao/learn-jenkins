@@ -1,14 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Deploy - Staging') {
             steps {
-                echo 'Building'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
+                echo 'deploy staging'
             }
         }
         stage('Deploy') {
@@ -16,17 +11,22 @@ pipeline {
                 echo 'Deploying'
             }
         }
-        stage('Deploy - Staging') {
-            steps {
-                echo 'deploy staging'
-            }
-        }
         stage('Deploy - Production') {
             steps {
                 echo 'deploy production'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
 
+        stage('Build') {
+            steps {
+                echo 'Building'
+            }
+        }
     }
     post {
         always {
